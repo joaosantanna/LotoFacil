@@ -26,8 +26,9 @@ public class Aposta implements Serializable{
     public Aposta() {
     }
 
-    public Aposta(ArrayList<Integer> numeros) {
+    public Aposta(ArrayList<Integer> numeros, String tipo) {
         this.numeros = numeros;
+        this.tipodeAposta = tipo;
     }
     
     // vai guarda os numeros de 1 aposta
@@ -36,8 +37,8 @@ public class Aposta implements Serializable{
     private String tipodeAposta;
     
     
-    public void adicionar(ArrayList<Integer> valores){
-        
+    public void adicionar(ArrayList<Integer> valores, String tipo){
+        this.tipodeAposta = tipo;
         for (int i : valores) {
             numeros.add(i);
         }
@@ -60,7 +61,7 @@ public class Aposta implements Serializable{
         
         
         
-        ResultadoBusca re = new ResultadoBusca(acertos,numAcertos);
+        ResultadoBusca re = new ResultadoBusca(acertos,numAcertos, this.tipodeAposta);
         
         return re;
         

@@ -17,12 +17,18 @@ import java.util.ArrayList;
  */
 public class ResultadoBusca {
     
-    ArrayList <Integer> acertos ;
-    int numeroAcertos;
+    private ArrayList <Integer> acertos ;
+    private int numeroAcertos;
+    private String tipo;
 
-    public ResultadoBusca(ArrayList<Integer> acertos, int numeroAcertos) {
+    public String getTipo() {
+        return tipo;
+    }
+
+    public ResultadoBusca(ArrayList<Integer> acertos, int numeroAcertos, String tipo) {
         this.acertos = acertos;
         this.numeroAcertos = numeroAcertos;
+        this.tipo = tipo;
     }
 
     public ArrayList<Integer> getAcertos() {
@@ -42,7 +48,7 @@ public class ResultadoBusca {
     }
     
     public void imprimirResultado(){
-        
+        System.out.println("\n Tipo de jogo:" + this.tipo);
         System.out.println("\n Numero de acertos:" + this.numeroAcertos);
         System.out.print("\n Numero certos:" );
         for (Integer i : acertos) {

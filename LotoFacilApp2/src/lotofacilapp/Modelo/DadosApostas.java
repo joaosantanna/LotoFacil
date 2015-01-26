@@ -44,7 +44,7 @@ public class DadosApostas implements Serializable {
         String resultado="";
         int i=1;
         for (Aposta aposta : dados) {
-         resultado += aposta.getTipodeAposta()+" Jogo "+ i +" : "+ aposta.getAposta() + "\n";
+         resultado += aposta.getTipodeAposta()+"\n Jogo "+ i +" : "+ aposta.getAposta() + "\n";
          i++;
         }
         return resultado;

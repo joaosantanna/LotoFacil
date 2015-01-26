@@ -43,7 +43,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </TitledPane>
-            <Pane prefHeight="242.0" prefWidth="789.0">
+            <Pane prefHeight="354.0" prefWidth="596.0">
                <children>
                   <HBox />
                   <Label layoutX="13.0" layoutY="5.0" text="Tabela de Jogos Cadastrados">
@@ -51,27 +51,27 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextArea fx:id="TextAreaTabela" editable="false" layoutX="13.0" layoutY="32.0" prefHeight="155.0" prefWidth="520.0" />
-                  <Button fx:id="botaoApagarJogo" layoutX="438.0" layoutY="199.0" mnemonicParsing="false" onAction="#handleButtonActionApagarJogo" prefHeight="26.0" prefWidth="95.0" text="Apagar Jogo" />
-                  <TextField fx:id="LabelAPagar" layoutX="276.0" layoutY="199.0" prefHeight="26.0" prefWidth="43.0" />
-                  <Button layoutX="336.0" layoutY="199.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Editar Jogo" />
-                  <CheckBox fx:id="megaCheck" layoutX="20.0" layoutY="203.0" mnemonicParsing="false" text="Mega Sena" />
-                  <CheckBox fx:id="facilCheck" layoutX="130.0" layoutY="203.0" mnemonicParsing="false" text="Loto Facil" />
+                  <TextArea fx:id="TextAreaTabela" editable="false" layoutX="13.0" layoutY="32.0" prefHeight="227.0" prefWidth="520.0" />
+                  <Button fx:id="botaoApagarJogo" layoutX="438.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleButtonActionApagarJogo" prefHeight="26.0" prefWidth="95.0" text="Apagar Jogo" />
+                  <TextField fx:id="LabelAPagar" layoutX="276.0" layoutY="271.0" prefHeight="26.0" prefWidth="43.0" />
+                  <Button layoutX="336.0" layoutY="271.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="86.0" text="Editar Jogo" />
+                  <Button fx:id="LimparTela" layoutX="14.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleButtonActionLimparTela" prefHeight="26.0" prefWidth="103.0" text="Limpar Tela" />
+                  <Button fx:id="botaoListarApostas" layoutX="141.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleButtonActioListarApostas" prefHeight="26.0" prefWidth="103.0" text="Listar Apostas" />
                </children>
             </Pane>
-            <Pane prefHeight="330.0" prefWidth="800.0">
+            <Pane prefHeight="270.0" prefWidth="596.0">
                <children>
-                  <TextField fx:id="labelNovoJogo" layoutX="154.0" layoutY="14.0" prefHeight="26.0" prefWidth="381.0" />
-                  <TextField fx:id="labelConferirResultado" layoutX="154.0" layoutY="56.0" prefHeight="26.0" prefWidth="381.0" />
-                  <Button fx:id="botaoNovoJogo" layoutX="28.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleButtonActionNovoJogo" prefHeight="26.0" prefWidth="103.0" text="Novo Jogo" />
-                  <Button fx:id="botaoConferir" layoutX="28.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleButtonActionConferir" prefHeight="26.0" prefWidth="103.0" text="Conferir" />
-                  <TextArea fx:id="TextAreaMonitor" layoutX="16.0" layoutY="125.0" prefHeight="170.0" prefWidth="520.0" />
-                  <Button fx:id="LimparTela" layoutX="207.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleButtonActionLimparTela" prefHeight="26.0" prefWidth="103.0" text="Limpar Tela" />
-                  <Label layoutX="28.0" layoutY="89.0" prefHeight="16.0" prefWidth="103.0" text="Resultados">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
+                  <TextField fx:id="labelNovoJogo" layoutX="138.0" layoutY="98.0" prefHeight="26.0" prefWidth="381.0" />
+                  <TextField fx:id="labelConferirResultado" layoutX="145.0" layoutY="187.0" prefHeight="26.0" prefWidth="381.0" />
+                  <Button fx:id="botaoNovoJogo" layoutX="14.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleButtonActionNovoJogo" prefHeight="26.0" prefWidth="103.0" text="Novo" />
+                  <Button fx:id="botaoConferir" layoutX="16.0" layoutY="187.0" mnemonicParsing="false" onAction="#handleButtonActionConferir" prefHeight="26.0" prefWidth="103.0" text="Conferir" />
+                  <Label layoutX="16.0" layoutY="14.0" text="Edição de jogos" />
+                  <CheckBox fx:id="megaCheck" layoutX="25.0" layoutY="48.0" mnemonicParsing="false" text="Mega Sena" />
+                  <CheckBox fx:id="facilCheck" layoutX="138.0" layoutY="48.0" mnemonicParsing="false" text="Loto Facil" />
+                  <CheckBox fx:id="maniaCheck" layoutX="234.0" layoutY="48.0" mnemonicParsing="false" text="Loto Mania" />
+                  <CheckBox fx:id="megaCheck2" layoutX="21.0" layoutY="154.0" mnemonicParsing="false" text="Mega Sena" />
+                  <CheckBox fx:id="facilCheck2" layoutX="136.0" layoutY="154.0" mnemonicParsing="false" text="Loto Facil" />
+                  <CheckBox fx:id="maniaCheck2" layoutX="234.0" layoutY="154.0" mnemonicParsing="false" text="Loto Mania" />
                </children>
             </Pane>
          </children>
