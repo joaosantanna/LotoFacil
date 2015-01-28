@@ -1,7 +1,13 @@
 LotoFacil
 =========
 
-Aplicativo para cadastrar apostas da mega sena , loto facil , etc. e conferir o numero de acertos em cada aposta
+Aplicativo para cadastrar apostas da mega sena , loto facil , e agora também da loto mania.
 
-O aplicativo já pode cadastrar apostas ( de quaquer tamanho ( megasena 6 numeros , lotofacil 15 ) ) .
-A funcionalidade de conferencia dos numeros acertados também já está implementada.
+O aplicativo confere o numero de acertos em cada aposta o numero de acertos em cada aposta
+
+A funcionalidade de cadastrar apostas e conferir resultados já está funcionando.
+
+Futuras atualizações planejadas é uma janela de estatistica de numeros sorteados .
+
+
+
