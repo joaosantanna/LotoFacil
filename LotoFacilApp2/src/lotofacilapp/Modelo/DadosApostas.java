@@ -107,4 +107,13 @@ public class DadosApostas implements Serializable {
         return dados;
     }
 
+    //retorna os numeros de uma aposta apenas ... 
+    //como vai ser editado ele remove a aposta ... do banco depois de pegar ...
+    public Aposta getAposta( int i){
+        
+        Aposta ap = dados.get(i);
+        
+        return ap;
+    }
+    
 }

@@ -50,13 +50,15 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button botaoSalvarJogos;
     @FXML
+    private Button botaoEditarJogo;
+    @FXML
     private TextArea TextAreaTabela;
 
     @FXML
     private Button botaoApagarJogo;
 
     @FXML
-    private TextField LabelAPagar;
+    private TextField textFieldAPagar;
 
     @FXML
     private Button botaoNovoJogo;
@@ -71,10 +73,10 @@ public class FXMLDocumentController implements Initializable {
     private Button botaoListarApostas;
 
     @FXML
-    private TextField labelNovoJogo;
+    private TextField textFieldNovoJogo;
 
     @FXML
-    private TextField labelConferirResultado;
+    private TextField textFieldConferirResultado;
 
     @FXML
     private Button LimparTela;
@@ -85,7 +87,7 @@ public class FXMLDocumentController implements Initializable {
 
         ArrayList<Integer> numeros = new ArrayList<Integer>();
         //pega os numeros para a aposta
-        String txt = labelNovoJogo.getText();
+        String txt = textFieldNovoJogo.getText();
 
         //variavel para teste se algum tipo de jogo foi selecionado
         boolean tipoJogoSelecionado = false; // inicialmente nada selecionado
@@ -134,16 +136,21 @@ public class FXMLDocumentController implements Initializable {
 
             banco.adicionarAposta(ap);
             TextAreaTabela.setText(banco.listarApostas());
+            
 
         }
-
+           textFieldNovoJogo.clear(); //limpa campo
+            maniaCheck.setSelected(false);
+            facilCheck.setSelected(false);
+            megaCheck.setSelected(false);
+  
     }
 
     @FXML
     void handleButtonActionConferir(ActionEvent event) {
 
         ArrayList<Integer> numeros = new ArrayList<Integer>();
-        String txt = labelConferirResultado.getText();
+        String txt =textFieldConferirResultado.getText();
 
         //variavel para teste se algum tipo de jogo foi selecionado
         boolean tipoJogoSelecionado = false; // inicialmente nada selecionado
@@ -226,48 +233,82 @@ public class FXMLDocumentController implements Initializable {
                 TextAreaTabela.setText(resposta);
 
             }
-            labelConferirResultado.clear();
+           textFieldConferirResultado.clear();
+           maniaCheck2.setSelected(false);
+            facilCheck2.setSelected(false);
+            megaCheck2.setSelected(false);
 
         }
     
 
-        @FXML
-        void handleButtonActionLimparTela(ActionEvent event) {
+    @FXML
+    void handleButtonActionLimparTela(ActionEvent event) {
 
         TextAreaTabela.clear();
         }
 
-        @FXML
-        void handleButtonActionApagarJogo(ActionEvent event) {
+    @FXML
+    void handleButtonActionApagarJogo(ActionEvent event) {
 
-        int i = Integer.parseInt(LabelAPagar.getText());
+        int i = Integer.parseInt(textFieldAPagar.getText());
             i = i - 1; //ajuste ja que o array comeca em zero
 
             banco.remover(i);
-            LabelAPagar.clear();
+            textFieldAPagar.clear();
             TextAreaTabela.setText(banco.listarApostas());
 
         }
 
-        @FXML
-        void handleButtonActionBotaoCarregarJogos(ActionEvent event) {
+    @FXML
+    void handleButtonActionEditarJogo(ActionEvent event) {
+        int i = Integer.parseInt(textFieldAPagar.getText());
+        i = i - 1; //ajuste ja que o array comeca em zero
+        
+        Aposta ap = banco.getAposta(i);
+        String txt = ap.getAposta();
+        this.textFieldNovoJogo.setText(txt); // carrega os numeros no field
+        String tipo = ap.getTipodeAposta();
+        
+        if(tipo.equals("Mega Sena")){
+            this.megaCheck.setSelected(true);
+        }
+        if(tipo.equals("Loto Facil")){
+            this.facilCheck.setSelected(true);
+        }
+        if(tipo.equals("Loto Mania")){
+            this.maniaCheck.setSelected(true);
+        }
+        //remove a aposta do banco depois de recuperar.
+        
+            
+    }
+        
+        
+    @FXML
+    void handleButtonActionBotaoCarregarJogos(ActionEvent event) {
         banco.carregarJogo();
             TextAreaTabela.setText(banco.listarApostas());
             TextAreaTabela.appendText("\n Jogos carregados na memoria com sucesso!!");
 
         }
 
-        @FXML
-        void handleButtonActionBotaoSalvarJogos(ActionEvent event) {
+    @FXML
+    void handleButtonActionBotaoSalvarJogos(ActionEvent event) {
 
         banco.salvarJogos();
 
             TextAreaTabela.setText("Jogo salvo com sucesso!!");
 
         }
+    
+    @FXML
+    void handleMenuClose(ActionEvent event) throws Throwable {
+       System.exit(0);
 
-        @FXML
-        void handleButtonActioListarApostas(ActionEvent event) {
+    }
+    
+    @FXML
+    void handleButtonActioListarApostas(ActionEvent event) {
         
         String apostas = banco.listarApostas();
             TextAreaTabela.setText(apostas);
@@ -275,8 +316,50 @@ public class FXMLDocumentController implements Initializable {
         }
 
     
-    
-    
+    @FXML
+    void handleCheckMega(ActionEvent event) {
+        maniaCheck.setSelected(false);
+        facilCheck.setSelected(false);
+        
+
+    }
+
+    @FXML
+    void handleCheckFacil(ActionEvent event) {
+        maniaCheck.setSelected(false);
+        
+        megaCheck.setSelected(false);
+
+    }
+
+    @FXML
+    void handleCheckMania(ActionEvent event) {
+
+        
+        facilCheck.setSelected(false);
+        megaCheck.setSelected(false);
+    }
+
+     @FXML
+    void handleCheckMega2(ActionEvent event) {
+            maniaCheck2.setSelected(false);
+            facilCheck2.setSelected(false);
+            
+    }
+
+    @FXML
+    void handleCheckFacil2(ActionEvent event) {
+            maniaCheck2.setSelected(false);
+            
+            megaCheck2.setSelected(false);
+    }
+
+    @FXML
+    void handleCheckMania2(ActionEvent event) {
+        
+        facilCheck2.setSelected(false);
+        megaCheck2.setSelected(false);
+    }
     
 
    
@@ -291,7 +374,8 @@ private void erroSelacaodeJogo() {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-
+        
+     this.botaoEditarJogo.setDisable(true);
     }
 
 }
